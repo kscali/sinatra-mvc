@@ -1,5 +1,6 @@
 
 get '/people/new' do
+  @person = Person.new
   erb :"/people/new"
 end
 
@@ -40,4 +41,8 @@ put '/people/:id' do
   person.birthdate = params[:birthdate]
   person.save
   redirect "/people/#{person.id}"
+end
+
+delete '/people/:id' do
+  redirect "/people"
 end

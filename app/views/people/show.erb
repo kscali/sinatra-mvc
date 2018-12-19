@@ -1,3 +1,5 @@
-<h1>"This is the person's results page:</h1>
+<h1>"This is the results page for <%= "#{@person.first_name} #{@person.last_name}" %></h1>
 <h2><%= "#{@person.first_name} #{@person.last_name}, #{@person.birthdate}" %></h2>
-<h2><%= "#{@message}" %></<h2>
+<h2><%= "#{@message}" %></<h2><br><br>
+
+<a href="http://localhost:9292/people">Click if you would like to see other's numerology number.</a>

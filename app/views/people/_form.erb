@@ -1,14 +1,27 @@
-<form action="<%= people_form_action(@person) %>" method="post" id="<% people_form_id(@person) %>" class="<%= people_form_class(@person) %>">
-<input type="hidden" name="_method" value="<%= people_form_method(@person) %>" >
-<label for="first_name">First Name:</label>
-<input name="first_name" type="text" value="<%= @person.first_name %>" />
+<% if !@errors.blank? %>
+  <p class="errors">
+    <%= "#{@errors}" %>
+  </p>
+<% end %>
 
-<label for="last_name">Last Name:</label>
-<input name="last_name" type="text" value="<%= @person.last_name %>" />
+<form action="<%= people_form_action(@person) %>" method="post" id="<% people_form_id(@person) %>" class="<%= people_form_class(@person) %> container">
+  <input type="hidden" name="_method" value="<%= people_form_method(@person) %>" >
+  <div>
+    <label for="first_name">First Name:</label>
+    <input name="first_name" type="text" value="<%= @person.first_name %>" />
+  </div>
 
-<label for="birthdate">Birthdate:</label>
-<input name="birthdate" type="date" value="<%= @person.birthdate %>" />
+  <div>
+    <label for="last_name">Last Name:</label>
+    <input name="last_name" type="text" value="<%= @person.last_name %>" />
+  </div>
 
-<input type="submit" />
+  <div>
+    <label for="birthdate">Birthdate:</label>
+    <input name="birthdate" type="date" value="<%= @person.birthdate %>" />
+  </div>
 
+  <div>
+    <input type="submit" />
+  </div>
 </form>
